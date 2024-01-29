@@ -1,4 +1,3 @@
-/**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
@@ -12,6 +11,10 @@ class Solution {
 private:
 ListNode* solve(ListNode* list1, ListNode* list2) {
     
+    if(list1->next == NULL){
+        list1->next = list2;
+        return list1;
+    }
     
     ListNode* curr1 = list1;
     ListNode* next1 = curr1 -> next;
@@ -25,7 +28,7 @@ ListNode* solve(ListNode* list1, ListNode* list2) {
            && ( curr2 -> val <= next1 -> val)) {
             
             curr1 -> next = curr2;
-            
+            next2 = curr2->next;
             curr2 -> next = next1;
             curr1 = curr2;
             curr2 = next2;
