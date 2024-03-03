@@ -53,6 +53,6 @@ Node* nReverse(Node* head, int n,int b[],int i) {
 }
 Node *getListAfterReverseOperation(Node *head, int n, int b[]){
 	// Write your code here.
-    int i = 0;
+    int i;
 	return nReverse(head, n,b,i);
 }
