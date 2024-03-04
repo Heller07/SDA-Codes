@@ -59,3 +59,45 @@ Node* removeKthNode(Node* head, int K)
     temp->next=temp->next->next;
     return head;
 } 
+//BY MY METHOD
+int lengthofLL(Node* head){
+    Node* temp = head;
+    int count  = 0;
+    while(temp != NULL){
+        temp = temp->next;
+        count++;
+    }
+    return count;
+}
+
+Node* removeKthNode(Node* head, int K)
+{
+    int position = lengthofLL(head)-K;
+    if(position == 0) {
+        Node* temp = head;
+        head = head -> next;
+        //memory free start ndoe
+        temp -> next = NULL;
+        delete temp;
+    }
+    else
+    {
+        //deleting any middle node or last node
+        Node* curr = head;
+        Node* prev = NULL;
+
+        int cnt = 0;
+        while(cnt < position) {
+            prev = curr;
+            curr = curr -> next;
+            cnt++;
+        }
+
+        prev -> next = curr -> next;
+        curr -> next  = NULL;
+        delete curr;
+
+    }
+    return head;
+
+}
