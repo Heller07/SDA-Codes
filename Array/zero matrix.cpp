@@ -1,4 +1,5 @@
 #include <bits/stdc++.h> 
+//TC = O(n^3 of order)
 vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
 	// Write your code here.
 	
@@ -26,6 +27,7 @@ vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
                 }
                 return matrix;
 //optimised
+//TC = O(nm)
 #include <bits/stdc++.h>
 using namespace std;
 vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
