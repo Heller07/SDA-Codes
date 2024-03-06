@@ -25,4 +25,27 @@ vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
         }
                 }
                 return matrix;
+//optimised
+#include <bits/stdc++.h>
+using namespace std;
+vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
+    vector<int> row(n, 0); // Initialize row markers with 
+    vector<int> col(m, 0); // Initialize column markers with 0
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            if(matrix[i][j] == 0) {
+                row[i] = 1;
+                col[j] = 1;
+            }
+        }
+    }
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            if(row[i] || col[j]) {
+                matrix[i][j] = 0; // Set the element to 0 if its row or column is marked
+            }
+        }
+    }
+    return matrix;
+}
   
