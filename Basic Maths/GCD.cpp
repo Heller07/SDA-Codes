@@ -1,3 +1,4 @@
+//Property of GCD gcd(a,b) == gcd(a-b,b)==gcd(a%b,b);a>b
 int findGcd(int n1, int n2) {
     // Initialize gcd to 1
     int gcd = 1;
